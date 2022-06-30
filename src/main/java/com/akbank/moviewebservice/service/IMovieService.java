@@ -10,4 +10,6 @@ public interface IMovieService {
    List<Movie> search(String name);
 
    MovieDetail addToList(String id);
+
+   MovieDetail getDetail(String id);
 }

@@ -37,6 +37,11 @@ public class MovieService implements IMovieService{
         return movieDetailResponse.getResult();
     }
 
+    @Override
+    public MovieDetail getDetail(String id) {
+        return null;
+    }
+
     @PostConstruct
     private void setHeaders() {
         this.headers.add("content-type","application/json");

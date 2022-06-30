@@ -26,6 +26,14 @@ public class MovieController {
         return movieService.addToList(id);
     }
 
+    @GetMapping("/movies/detail/{id}")
+    public MovieDetail detail(@PathVariable(name = "id") String id){
+        return movieService.getDetail(id);
+    }
+
+
+
+
 
 
 }
