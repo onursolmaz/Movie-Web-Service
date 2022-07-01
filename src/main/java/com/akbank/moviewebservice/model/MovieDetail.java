@@ -36,6 +36,7 @@ public class MovieDetail implements Serializable {
     private String response;
 
 
+    //To write to the file as json format
     public String objectAsJson(MovieDetail movieDetail) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         String jsonString = mapper.writeValueAsString(movieDetail);

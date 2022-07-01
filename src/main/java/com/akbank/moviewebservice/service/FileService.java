@@ -36,6 +36,7 @@ public class FileService {
         FileReader reader=new FileReader(file);
         BufferedReader bReader=new BufferedReader(reader);
         String line;
+        // to map texts to object
         ObjectMapper mapper=new ObjectMapper();
 
         while ((line=bReader.readLine())!=null){

@@ -25,7 +25,6 @@ public class MovieService implements IMovieService {
     private HttpEntity<?> requestEntity=new HttpEntity<>(this.headers);
 
 
-
     @Override
     public List<Movie> search(String name) {
         String url="https://api.collectapi.com/imdb/imdbSearchByName?query="+name;
@@ -45,6 +44,7 @@ public class MovieService implements IMovieService {
     public MovieDetail getDetail(String id) {
         MovieDetail movieDetail = fileService.readToFile(id);
 
+        //if exits in file, return detail
         if(Objects.nonNull(movieDetail)){
             return movieDetail;
         }
