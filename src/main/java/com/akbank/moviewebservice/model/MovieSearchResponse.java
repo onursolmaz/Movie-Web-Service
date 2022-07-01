@@ -6,7 +6,7 @@ import java.util.List;
 
 
 @Data
-public class MovieResponse {
+public class MovieSearchResponse {
 
     private boolean success;
     private List<Movie> result;

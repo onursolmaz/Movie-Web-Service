@@ -1,4 +1,4 @@
-package com.akbank.moviewebservice.service;
+package com.akbank.moviewebservice.service.interfaces;
 
 import com.akbank.moviewebservice.model.Movie;
 import com.akbank.moviewebservice.model.MovieDetail;

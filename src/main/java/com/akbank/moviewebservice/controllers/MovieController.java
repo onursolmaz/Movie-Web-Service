@@ -3,8 +3,9 @@ package com.akbank.moviewebservice.controllers;
 
 import com.akbank.moviewebservice.model.Movie;
 import com.akbank.moviewebservice.model.MovieDetail;
-import com.akbank.moviewebservice.service.IMovieService;
+import com.akbank.moviewebservice.service.interfaces.IMovieService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,7 +14,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MovieController {
 
-    private final IMovieService movieService;
+    private IMovieService movieService;
+
+    @Autowired
+    public MovieController(@Qualifier("movieService") IMovieService movieService) {
+        this.movieService = movieService;
+    }
 
     @GetMapping(value = "/movies/search")
     public List<Movie> search(@RequestParam(name = "movie_name") String name){
@@ -30,10 +36,5 @@ public class MovieController {
     public MovieDetail detail(@PathVariable(name = "id") String id){
         return movieService.getDetail(id);
     }
-
-
-
-
-
 
 }

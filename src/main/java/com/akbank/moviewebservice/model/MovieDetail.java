@@ -1,113 +1,120 @@
 package com.akbank.moviewebservice.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 
 import java.io.Serializable;
-import java.util.List;
 
 @Getter
 public class MovieDetail implements Serializable {
 
-    private String Title;
-    private String Year;
-    private String Rated;
-    private String Released;
-    private String Runtime;
-    private String Genre;
-    private String Director;
-    private String Writer;
-    private String Actors;
-    private String Plot;
-    private String Language;
-    private String Country;
-    private String Awards;
-    private String Poster;
-    private String Metascore;
+    private String imdbID;
+    private String title;
+    private String year;
+    private String rated;
+    private String released;
+    private String runtime;
+    private String genre;
+    private String director;
+    private String writer;
+    private String actors;
+    private String plot;
+    private String language;
+    private String country;
+    private String awards;
+    private String poster;
+    private String metascore;
     private String imdbRating;
     private String imdbVotes;
-    private String imdbID;
-    private String Type;
+    private String type;
     private String DVD;
-    private String BoxOffice;
-    private String Production;
-    private String Website;
-    private String Response;
+    private String boxOffice;
+    private String production;
+    private String website;
+    private String response;
 
+
+    public String objectAsJson(MovieDetail movieDetail) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = mapper.writeValueAsString(movieDetail);
+        return jsonString;
+    }
 
     @JsonProperty("Title")
     public void setTittle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     @JsonProperty("Year")
     public void setYear(String year) {
-        Year = year;
+        this.year = year;
     }
 
     @JsonProperty("Rated")
     public void setRated(String rated) {
-        Rated = rated;
+        this.rated = rated;
     }
 
     @JsonProperty("Released")
     public void setReleased(String released) {
-        Released = released;
+        this.released = released;
     }
 
     @JsonProperty("Runtime")
     public void setRuntime(String runtime) {
-        Runtime = runtime;
+        this.runtime = runtime;
     }
 
     @JsonProperty("Genre")
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
     @JsonProperty("Director")
     public void setDirector(String director) {
-        Director = director;
+        this.director = director;
     }
 
     @JsonProperty("Writer")
     public void setWriter(String writer) {
-        Writer = writer;
+        this.writer = writer;
     }
 
     @JsonProperty("Actors")
     public void setActors(String actors) {
-        Actors = actors;
+        this.actors = actors;
     }
 
     @JsonProperty("Plot")
     public void setPlot(String plot) {
-        Plot = plot;
+        this.plot = plot;
     }
 
     @JsonProperty("Language")
     public void setLanguage(String language) {
-        Language = language;
+        this.language = language;
     }
 
     @JsonProperty("Country")
     public void setCountry(String country) {
-        Country = country;
+        this.country = country;
     }
 
     @JsonProperty("Awards")
     public void setAwards(String awards) {
-        Awards = awards;
+        this.awards = awards;
     }
 
     @JsonProperty("Poster")
     public void setPoster(String poster) {
-        Poster = poster;
+        this.poster = poster;
     }
 
     @JsonProperty("Metascore")
     public void setMetascore(String metascore) {
-        Metascore = metascore;
+        this.metascore = metascore;
     }
 
     @JsonProperty("imdbRating")
@@ -127,7 +134,7 @@ public class MovieDetail implements Serializable {
 
     @JsonProperty("Type")
     public void setType(String type) {
-        Type = type;
+        this.type = type;
     }
 
     @JsonProperty("DVD")
@@ -137,21 +144,21 @@ public class MovieDetail implements Serializable {
 
     @JsonProperty("BoxOffice")
     public void setBoxOffice(String boxOffice) {
-        BoxOffice = boxOffice;
+        this.boxOffice = boxOffice;
     }
 
     @JsonProperty("Production")
     public void setProduction(String production) {
-        Production = production;
+        this.production = production;
     }
 
     @JsonProperty("Website")
     public void setWebsite(String website) {
-        Website = website;
+        this.website = website;
     }
 
     @JsonProperty("Response")
     public void setResponse(String response) {
-        Response = response;
+        this.response = response;
     }
 }
